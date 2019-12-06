@@ -3,8 +3,7 @@ package ModelosDB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class BaseDatosGeneral {
 
@@ -24,16 +23,7 @@ public class BaseDatosGeneral {
         }
 
         // Consigue una conexión de la base de datos para ejeuctar statements y demás.
-/*
-    private void registrarDriver() {
-        try {
-            Class.forName("org.h2.Driver");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(UsuarioDB.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 
-  */
         public Connection getConexion() {
             Connection conexion = null;
 

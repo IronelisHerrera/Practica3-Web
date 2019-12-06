@@ -29,7 +29,7 @@
     </ul>
     <div class="d-flex justify-content-center h-100" id="EdicionArticulo">
         <div class="row">
-            <div class="col-md-18">
+            <div class="col-sm-12">
                 <div class="card-body" >
                     <div class="card-header" >
                         <h4>${articulo.titulo} </h4>
@@ -93,7 +93,7 @@
                                 <div class="form-group">
                                     <input type="submit" value="Editar" class="btn float-right login_btn">
                                 </div>
-                                    </div>
+                               </div>
                             </form>
 
                         </div>

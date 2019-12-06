@@ -64,7 +64,7 @@
                         <div class="card-header" id="PublicacionArticulos">
                             <h4>${articulo.titulo} </h4> <!--Poner titulo-->
                         </div>
-                        <div class="card-body" id="PublicacionArticulos">
+                        <div class="card-body" id="PublicacionArticulos" style="color: #c8cbcf">
                             <#if articulo.cuerpo?length gt 70>
                                 <p class="card-text">${articulo.cuerpo?substring(0, 71)}...</p>
                                 <#else>
@@ -74,12 +74,12 @@
 
                         </div>
 
-                        <div class="card-footer " id="PublicacionArticulos">
+                        <div class="card-footer " id="PublicacionArticulos"style="color: #c8cbcf">
                             <h6>Publicado el: ${articulo.fecha}  </h6>
                         </div>
 
                         <#list articulo.arregloEtiquetas as et>
-                            <div class="card-footer " id="PublicacionArticulos">
+                            <div class="card-footer " id="PublicacionArticulos" style="color: #c8cbcf">
 
                                 <h6>Etiquetas: ${et.etiqueta}</h6>
                             </div>

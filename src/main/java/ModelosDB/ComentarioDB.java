@@ -2,7 +2,6 @@ package ModelosDB;
 
 import Modelos.Comentario;
 import Modelos.Usuario;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,10 +19,9 @@ public class ComentarioDB {
         List<Comentario> lista = new ArrayList<>();
         Connection con = null; //objeto conexion.
         try {
-            //
+
             String query = "select * from comentarios where ARTICULO_ID = ?";
             con = BaseDatosGeneral.getInstancia().getConexion(); //referencia a la conexion.
-            //
             PreparedStatement prepareStatement = con.prepareStatement(query);
             prepareStatement.setLong(1, idArt);
 
@@ -134,67 +132,5 @@ public class ComentarioDB {
         return ok;
     }
 
-//    public boolean actualizarComentario(Comentario comentario){
-//        boolean ok =false;
-//
-//        Connection con = null;
-//        try {
-//
-//            String query = "update comentarios set comentario=?, autor=?, articulo=? where id = ?";
-//            con = DataBaseServices.getInstancia().getConexion();
-//            //
-//            PreparedStatement prepareStatement = con.prepareStatement(query);
-//            //Antes de ejecutar seteo los parametros.
-//            prepareStatement.setString(1, comentario.getComentario());
-//            prepareStatement.setString(2, comentario.getAutor().getUsername());
-//            prepareStatement.setLong(3, comentario.getArticulo().getId());
-//            //Indica el where...
-//            prepareStatement.setLong(4, comentario.getId());
-//            //
-//            int fila = prepareStatement.executeUpdate();
-//            ok = fila > 0 ;
-//
-//        } catch (SQLException ex) {
-//            Logger.getLogger(UserServices.class.getName()).log(Level.SEVERE, null, ex);
-//        } finally{
-//            try {
-//                con.close();
-//            } catch (SQLException ex) {
-//                Logger.getLogger(UserServices.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-//
-//        return ok;
-//    }
-//
-//    public boolean borrarComentario(int id){
-//        boolean ok =false;
-//
-//        Connection con = null;
-//        try {
-//
-//            String query = "delete from comentarios where id = ?";
-//            con = DataBaseServices.getInstancia().getConexion();
-//            //
-//            PreparedStatement prepareStatement = con.prepareStatement(query);
-//
-//            //Indica el where...
-//            prepareStatement.setInt(1, id);
-//            //
-//            int fila = prepareStatement.executeUpdate();
-//            ok = fila > 0 ;
-//
-//        } catch (SQLException ex) {
-//            Logger.getLogger(UserServices.class.getName()).log(Level.SEVERE, null, ex);
-//        } finally{
-//            try {
-//                con.close();
-//            } catch (SQLException ex) {
-//                Logger.getLogger(UserServices.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-//
-//        return ok;
-//    }
-//
+
 }

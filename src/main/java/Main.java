@@ -76,9 +76,6 @@ public class Main {
         config.setClassForTemplateLoading(Main.class, "/");
         config.setDefaultEncoding("UTF-8"); //Renderizar con tildes.
 
-
-        //Para la Base de Datos y crear las tablas
-
         BaseDeDatosTablas.iniciarBaseDatos();
         BaseDatosGeneral.getInstancia().testConexion();
 
@@ -210,7 +207,6 @@ public class Main {
             String user = request.queryParams("usuario");
             String n = request.queryParams("nombre");
             String clave = request.queryParams("clave");
-
             StrongTextEncryptor e = new StrongTextEncryptor();
             e.setPassword("xdxd178245");
             String encrypt = e.encrypt(clave);
@@ -260,13 +256,10 @@ public class Main {
 
         get("/CerrarSesion", (request, response) -> {
 
-
             Session S = request.session(true);
             S.invalidate();
             response.removeCookie("PorUnaSemana");
-
             response.redirect("/");
-
             return null;
         });
 
@@ -296,8 +289,7 @@ public class Main {
                 System.out.println("etiqueta insertada");
                 response.redirect("/");
             }
-            //No pueden hacer articulos los administradores
-
+            //No pueden hacer articulos los administradore
             return null;
         });
 
@@ -317,7 +309,6 @@ public class Main {
 
             Articulo art = ArticuloDB.BucarArticuloByID(idA);
             List<Comentario> comentarios = ComentarioDB.listaComentarios(idA);
-
 
             Map<String, Object> m = new HashMap<>();
             if(request.session().attribute("sesionUsuario") != null)
@@ -357,7 +348,6 @@ public class Main {
             Session session=request.session(true);
             Usuario usuario = session.attribute("sesionUsuario");
             Comentario newComentario = new Comentario(comentario, usuario, articulo);
-
             new ComentarioDB().crearComentario(newComentario);
             response.redirect("/VerArticulo/"+id);
             return "";
