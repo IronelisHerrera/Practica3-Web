@@ -1,0 +1,7 @@
+<application>
+  <component name="GithubAccounts">
+    <account id="f0e4e02e-e369-4e8a-ba51-37261c74dde1" name="nikorux">
+      <server host="github.com" />
+    </account>
+  </component>
+</application>
